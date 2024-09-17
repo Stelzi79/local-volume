@@ -1,5 +1,6 @@
 services:
-  docker-local-persist-volume-plugin:
+  local-persist-plugin:
+    container_name: local-persist-plugin
     image: cwspear/docker-local-persist-volume-plugin:${lp_volume_version:-latest}
     volumes:
       - /run/docker/plugins/:/run/docker/plugins/
