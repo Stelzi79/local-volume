@@ -1,0 +1,20 @@
+services:
+  one:
+    image: debian
+    working_dir: /one/
+    command: sleep 600
+    volumes:
+      - data:/one/
+
+  two:
+    image: alpine
+    working_dir: /two/
+    command: sleep 600
+    volumes:
+      - data:/two/
+
+volumes:
+  data:
+    driver: local-persist
+    driver_opts:
+      mountpoint: /opt/docker/volumes/
